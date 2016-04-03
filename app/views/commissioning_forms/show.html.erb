@@ -22,7 +22,7 @@
 
 <p>
   <strong>Type:</strong>
-  <%= @commissioning_form.type %>
+  <%= @commissioning_form.job_type %>
 </p>
 
 <p>
@@ -61,16 +61,22 @@
 </p>
 
 <h2>Modules</h2>
-<% @commissioning_form.mods.each do |mod| %>
+<% @commissioning_form.mods.each do |panel| %>
 <p>
 <strong>Type:</strong>
-<%= mod.mod_type %>
+<%= panel.mod_type %>
 </p>
 <p>
 <strong>QTY:</strong>
-<%= mod.qty %>
+<%= panel.qty %>
 </p>
 <% end %>
+
+<h2>Inverter Info </h2>
+<% @commissioning_form.inverters.each do |inverter| %>
+<%= inverter.inverter_type%>
+<% end %>
+
 
 <h2> Electrical Info</h2>
 <p>

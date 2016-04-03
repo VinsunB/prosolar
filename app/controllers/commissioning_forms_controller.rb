@@ -55,7 +55,7 @@ before_filter :login_required
   def destroy
     @commissioning_form.destroy
         flash[:notice] = 'Commissioning form was successfully destroyed.'
-     redirect_toroot_path
+     redirect_to root_path
   end
 
   private
@@ -66,7 +66,7 @@ before_filter :login_required
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def commissioning_form_params
-      params.require(:commissioning_form).permit(:commissioning_date, :employee_name, :job, :customer_name, :type, :system_size, :location, :physical_address, :mailing_address, :parcel_id, :customer_phone, :customer_email, :permit, :installation_completed, :net_meter_installed, :wapa_account, :project_notes,
+      params.require(:commissioning_form).permit(:commissioning_date, :employee_name, :job, :customer_name, :job_type, :system_size, :location, :physical_address, :mailing_address, :parcel_id, :customer_phone, :customer_email, :permit, :installation_completed, :net_meter_installed, :wapa_account, :project_notes,
        mods_attributes: [:mod_type, :qty, :commissioning_form_id],
        inverters_attributes: [:inverter_type, :qty_of_inverter, :total_mods_to_inv, :strings, :avg_voltage_dc, :ocpd, :load_center_size, :lc_main_wire_gauge, :kwh_total, :commissioning_form_id])
     end

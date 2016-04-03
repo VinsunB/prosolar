@@ -5,7 +5,7 @@ class CreateCommissioningForms < ActiveRecord::Migration
       t.string :employee_name
       t.string :job
       t.string :customer_name
-      t.string :type
+      t.string :job_type
       t.integer :system_size
       t.string :location
       t.string :physical_address

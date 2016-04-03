@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20160403040200) do
     t.string   "employee_name"
     t.string   "job"
     t.string   "customer_name"
-    t.string   "type"
+    t.string   "job_type"
     t.integer  "system_size"
     t.string   "location"
     t.string   "physical_address"
