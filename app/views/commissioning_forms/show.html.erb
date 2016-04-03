@@ -1,0 +1,102 @@
+<p id="notice"><%= notice %></p>
+<h2>Customer Info </h2>
+<p>
+  <strong>Commissioning date:</strong>
+  <%= @commissioning_form.commissioning_date %>
+</p>
+
+<p>
+  <strong>Employee name:</strong>
+  <%= @commissioning_form.employee_name %>
+</p>
+
+<p>
+  <strong>Job:</strong>
+  <%= @commissioning_form.job %>
+</p>
+
+<p>
+  <strong>Customer name:</strong>
+  <%= @commissioning_form.customer_name %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @commissioning_form.type %>
+</p>
+
+<p>
+  <strong>System size:</strong>
+  <%= @commissioning_form.system_size %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @commissioning_form.location %>
+</p>
+
+<p>
+  <strong>Physical address:</strong>
+  <%= @commissioning_form.physical_address %>
+</p>
+
+<p>
+  <strong>Mailing address:</strong>
+  <%= @commissioning_form.mailing_address %>
+</p>
+
+<p>
+  <strong>Parcel:</strong>
+  <%= @commissioning_form.parcel_id %>
+</p>
+
+<p>
+  <strong>Customer phone:</strong>
+  <%= @commissioning_form.customer_phone %>
+</p>
+
+<p>
+  <strong>Customer email:</strong>
+  <%= @commissioning_form.customer_email %>
+</p>
+
+<h2>Modules</h2>
+<% @commissioning_form.mods.each do |mod| %>
+<p>
+<strong>Type:</strong>
+<%= mod.mod_type %>
+</p>
+<p>
+<strong>QTY:</strong>
+<%= mod.qty %>
+</p>
+<% end %>
+
+<h2> Electrical Info</h2>
+<p>
+  <strong>Permit:</strong>
+  <%= @commissioning_form.permit %>
+</p>
+
+<p>
+  <strong>Installation completed:</strong>
+  <%= @commissioning_form.installation_completed %>
+</p>
+
+<p>
+  <strong>Net meter installed:</strong>
+  <%= @commissioning_form.net_meter_installed %>
+</p>
+
+<p>
+  <strong>Wapa account:</strong>
+  <%= @commissioning_form.wapa_account %>
+</p>
+
+<p>
+  <strong>Project notes:</strong>
+  <%= @commissioning_form.project_notes %>
+</p>
+<%= link_to 'Destroy', @commissioning_form, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Edit', edit_commissioning_form_path(@commissioning_form) %> |
+<%= link_to 'Back', commissioning_forms_path %>

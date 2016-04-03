@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  inverter_type: MyString
+  qty_of_inverter: 1
+  total_mods_to_inv: 1
+  strings: 1
+  avg_voltage_dc: 1
+  ocpd: MyString
+  load_center_size: 1
+  lc_main_wire_gauge: 1
+  kwh_total: 1
+  commissioning_form_id: 1
+
+two:
+  inverter_type: MyString
+  qty_of_inverter: 1
+  total_mods_to_inv: 1
+  strings: 1
+  avg_voltage_dc: 1
+  ocpd: MyString
+  load_center_size: 1
+  lc_main_wire_gauge: 1
+  kwh_total: 1
+  commissioning_form_id: 1

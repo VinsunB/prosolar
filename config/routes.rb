@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-root 'pages#home'
+  resources :commissioning_forms
+
+root 'commissioning_forms#index'
 
 resources :sessions, only: [:new, :create, :destroy]
 resources :users

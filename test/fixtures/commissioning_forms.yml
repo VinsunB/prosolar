@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  commissioning_date: MyString
+  employee_name: MyString
+  job: MyString
+  customer_name: MyString
+  type: 
+  system_size: 1
+  location: MyString
+  physical_address: MyString
+  mailing_address: MyString
+  parcel_id: MyString
+  customer_phone: 1
+  customer_email: MyString
+  permit: MyString
+  installation_completed: MyString
+  net_meter_installed: MyString
+  wapa_account: MyString
+  project_notes: MyText
+
+two:
+  commissioning_date: MyString
+  employee_name: MyString
+  job: MyString
+  customer_name: MyString
+  type: 
+  system_size: 1
+  location: MyString
+  physical_address: MyString
+  mailing_address: MyString
+  parcel_id: MyString
+  customer_phone: 1
+  customer_email: MyString
+  permit: MyString
+  installation_completed: MyString
+  net_meter_installed: MyString
+  wapa_account: MyString
+  project_notes: MyText

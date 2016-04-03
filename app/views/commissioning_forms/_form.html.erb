@@ -1,0 +1,111 @@
+<%= form_for(@commissioning_form) do |f| %>
+  <% if @commissioning_form.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@commissioning_form.errors.count, "error") %> prohibited this commissioning_form from being saved:</h2>
+
+      <ul>
+      <% @commissioning_form.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<h3>Customer Info</h3>
+  <div id="employee_entry">
+    <%= f.label :commissioning_date %><br>
+    <%= f.text_field :commissioning_date %>
+  <br>
+    <%= f.label :employee_name %><br>
+    <%= f.text_field :employee_name %>
+  </div>
+  <div class="field">
+    <%= f.label :job %><br>
+    <%= f.text_field :job %>
+  </div>
+  <div class="field">
+    <%= f.label :customer_name %><br>
+    <%= f.text_field :customer_name %>
+  </div>
+  <div class="field">
+    <%= f.label :type %><br>
+    <%= f.text_field :type %>
+  </div>
+  <div class="field">
+    <%= f.label :system_size %><br>
+    <%= f.number_field :system_size %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :physical_address %><br>
+    <%= f.text_field :physical_address %>
+  </div>
+  <div class="field">
+    <%= f.label :mailing_address %><br>
+    <%= f.text_field :mailing_address %>
+  </div>
+  <div class="field">
+    <%= f.label :parcel_id %><br>
+    <%= f.text_field :parcel_id %>
+  </div>
+  <div class="field">
+    <%= f.label :customer_phone %><br>
+    <%= f.number_field :customer_phone %>
+  </div>
+  <div class="field">
+    <%= f.label :customer_email %><br>
+    <%= f.text_field :customer_email %>
+  </div>
+
+
+  <br>
+<h3> Modules </h3>
+<%= f.fields_for(:mods) do |mod_form| %>
+<p>
+<%= mod_form.label :mod_type %>
+<br>
+<%= mod_form.text_field :mod_type %>
+</p>
+<p>
+<%= mod_form.label :qty %>
+<br>
+<%= mod_form.text_field :qty %>
+</p>
+<% end %>
+<br>
+
+
+<h3>Inverters</h3>
+<%= f.fields_for(:inverters) do |inverter_form| %>
+<%= render :partial => 'inverter_form', :locals => {:f => inverter_form } %>
+<% end %>
+
+
+<br>
+<h3> Electrical Info</h3>
+  <div class="field">
+    <%= f.label :permit %><br>
+    <%= f.text_field :permit %>
+  </div>
+  <div class="field">
+    <%= f.label :installation_completed %><br>
+    <%= f.text_field :installation_completed %>
+  </div>
+  <div class="field">
+    <%= f.label :net_meter_installed %><br>
+    <%= f.text_field :net_meter_installed %>
+  </div>
+  <div class="field">
+    <%= f.label :wapa_account %><br>
+    <%= f.text_field :wapa_account %>
+  </div>
+  <div class="field">
+    <%= f.label :project_notes %><br>
+    <%= f.text_area :project_notes %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

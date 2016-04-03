@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mod_type: MyString
+  qty: 1
+  commissioning_form_id: 1
+
+two:
+  mod_type: MyString
+  qty: 1
+  commissioning_form_id: 1

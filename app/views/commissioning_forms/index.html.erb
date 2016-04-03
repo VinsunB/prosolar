@@ -1,0 +1,26 @@
+<h1>Listing commissioning_forms</h1>
+
+<table>
+  <thead>
+    <tr>
+     
+      <th>Job</th>
+      
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @commissioning_forms.each do |commissioning_form| %>
+      <tr>
+      
+        <td><%= commissioning_form.job %></td>
+      
+        <td><%= link_to 'Open', commissioning_form %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Commissioning form', new_commissioning_form_path %>
