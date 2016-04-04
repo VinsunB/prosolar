@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
  
-  resources :commissioning_forms 
+  resources :commissioning_forms do
+    collection do
+      get :form_setup    
+    end
+  member do 
+       get :printable
+     end
+  end
    
 root 'commissioning_forms#index'
 

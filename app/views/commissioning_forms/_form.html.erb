@@ -11,13 +11,6 @@
     </div>
   <% end %>
 <h3>Customer Info</h3>
-  <div id="employee_entry">
-    <%= f.label :commissioning_date %><br>
-    <%= f.text_field :commissioning_date %>
-  <br>
-    <%= f.label :employee_name %><br>
-    <%= f.text_field :employee_name %>
-  </div>
   <div class="field">
     <%= f.label :job %><br>
     <%= f.text_field :job %>
@@ -28,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :job_type %><br>
-    <%= f.text_field :job_type %>
+    <%= f.select :job_type, ["Commercial", "Residential ", "Other"] %>
   </div>
   <div class="field">
     <%= f.label :system_size %><br>
@@ -77,8 +70,9 @@
 <br>
 
 
-<h3>Inverters</h3>
+
 <%= f.fields_for(:inverters) do |inverter_form| %>
+<% @inverter_number += 1 %>
 <%= render :partial => 'inverter_form', :locals => {:f => inverter_form } %>
 <% end %>
 
@@ -106,6 +100,15 @@
     <%= f.text_area :project_notes %>
   </div>
   <div class="actions">
+
+
+    <%= f.label :commissioning_date %><br>
+    <%= f.text_field :commissioning_date %>
+  <br>
+    <%= f.label :employee_name %><br>
+    <%= f.text_field :employee_name %>
+ <br>
+
 <%= f.submit 'save' %> 
   </div>
 <% end %>

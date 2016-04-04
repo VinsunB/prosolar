@@ -2,7 +2,9 @@ class CommissioningFormsController < ApplicationController
 before_filter :login_required
   before_action :set_commissioning_form, only: [ :update, :destroy]
 
-  
+  def form_setup
+  end
+
   def index
   pagination = Pagination.new
   params[:page] = pagination.paginate(params[:page].to_i, params[:request], CommissioningForm.count, 10)
@@ -20,11 +22,19 @@ before_filter :login_required
     @commissioning_form = CommissioningForm.includes([:mods,:inverters]).find(params[:id])
   end
 
+def printable 
+@commissioning_form = CommissioningForm.includes([:mods,:inverters]).find(params[:id])
+ render :layout => false
+end
   
   def new
     @commissioning_form = CommissioningForm.new
   @commissioning_form.mods.build
+  
+   @inverter_number = 0
+   params[:type_of_inverters].to_i.times do
    @commissioning_form.inverters.build
+   end
   end
 
   

@@ -1,7 +1,3 @@
-
-<div id="print_page_link"><%= link_to "printable page", printable_commissioning_form_path(params[:id]) %></div>
-<p id="notice"><%= notice %></p>
-
 <h2>Customer Info </h2>
 <p>
   <strong>Commissioning date:</strong>
@@ -142,6 +138,3 @@
   <strong>Project notes:</strong>
   <%= @commissioning_form.project_notes %>
 </p>
-<%= link_to 'Destroy', @commissioning_form, method: :delete, data: { confirm: 'Are you sure?' } %>
-<%= link_to 'Edit', edit_commissioning_form_path(@commissioning_form) %> |
-<%= link_to 'Back', commissioning_forms_path %>
