@@ -1,11 +1,11 @@
 
 <div class="center">
 <%= form_tag new_commissioning_form_path, method: :get do %>
-<h3> Inverter types on job </h3>
-<%= select_tag "type_of_inverters", "<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>".html_safe %>
+<h3> Types of inverter on job </h3>
+Types<%= select_tag "type_of_inverters", "<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>".html_safe %>
 <br>
 <br>
-<%= submit_tag %>
+<%= submit_tag "Next Section" %>
 <% end %>
 <%= link_to 'Back', commissioning_forms_path %>
 </div>
