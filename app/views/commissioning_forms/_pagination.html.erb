@@ -1,0 +1,20 @@
+
+<%= link_to "first", commissioning_forms_path( page: @page, request: "first") %>
+
+<% if params[:search] %>
+<a href="next" class="gray">Next</a>
+<a href="back" class="gray">Back</a>
+<% else %>
+<% if params[:page] >= CommissioningForm.count - 10 %>
+<a href="" class="gray">Next</a>
+<% else %>
+<%= link_to "next", commissioning_forms_path( page: @page, request: "next") %>
+<% end %>
+
+<% if params[:page] <= 0 %>
+<a href="" class="gray">Back</a>
+<% else %>
+<%= link_to "back", commissioning_forms_path( page: @page, request: "back") %>
+<% end %>
+<% end %>
+<%= link_to "last", commissioning_forms_path( page: @page, request: "last") %>

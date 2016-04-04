@@ -74,7 +74,43 @@
 
 <h2>Inverter Info </h2>
 <% @commissioning_form.inverters.each do |inverter| %>
+<p>
+<strong>Inverter Type:</strong>
 <%= inverter.inverter_type%>
+</p>
+<p>
+<strong>Inverter Qty:</strong>
+<%= inverter.qty_of_inverter%>
+</p>
+<p>
+<strong>Total Modules for Inverter:</strong>
+<%= inverter.total_mods_to_inv%>
+</p>
+<p>
+<strong>Strings:</strong>
+<%= inverter.strings%>
+</p>
+<p>
+<strong>Avg Voltage DC:</strong>
+<%= inverter.avg_voltage_dc%>
+</p>
+<p>
+<strong>OCPD:</strong>
+<%= inverter.ocpd%>
+</p>
+<p>
+<strong>Load Center Size:</strong>
+<%= inverter.load_center_size%>
+</p>
+<p>
+<strong>LC Main Wire Gauge:</strong>
+<%= inverter.lc_main_wire_gauge %>
+</p>
+<p>
+<strong>kwh total:</strong>
+<%= inverter.kwh_total %>
+</p>
+
 <% end %>
 
 

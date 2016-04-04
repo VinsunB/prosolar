@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160403040200) do
+ActiveRecord::Schema.define(version: 20160403113138) do
 
   create_table "commissioning_forms", force: true do |t|
     t.string   "commissioning_date"
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 20160403040200) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "draft",                  default: false
+    t.boolean  "send_email",             default: false
   end
 
   create_table "inverters", force: true do |t|

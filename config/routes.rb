@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :commissioning_forms
-
+ 
+  resources :commissioning_forms 
+   
 root 'commissioning_forms#index'
 
 resources :sessions, only: [:new, :create, :destroy]

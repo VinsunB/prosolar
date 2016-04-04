@@ -4,7 +4,16 @@ before_filter :login_required
 
   
   def index
-    @commissioning_forms = CommissioningForm.all
+  pagination = Pagination.new
+  params[:page] = pagination.paginate(params[:page].to_i, params[:request], CommissioningForm.count, 10)
+@page = params[:page].to_i
+       
+       if params[:search]
+         @commissioning_forms = CommissioningForm.search(params[:search]).order("created_at ASC").limit(10) 
+         
+      else
+    @commissioning_forms = CommissioningForm.limit(10).offset(params[:page]).order("created_at ASC")
+  end
   end
 
   def show
@@ -27,7 +36,9 @@ before_filter :login_required
   def create
     @commissioning_form = CommissioningForm.new(commissioning_form_params)
 
-
+if params[:commit] == "save as draft"
+  @commissioning_form.draft = true
+ end
       if @commissioning_form.save
        flash[:notice] = "Commissioning form was successfully created."
       redirect_to @commissioning_form 
@@ -66,7 +77,7 @@ before_filter :login_required
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def commissioning_form_params
-      params.require(:commissioning_form).permit(:commissioning_date, :employee_name, :job, :customer_name, :job_type, :system_size, :location, :physical_address, :mailing_address, :parcel_id, :customer_phone, :customer_email, :permit, :installation_completed, :net_meter_installed, :wapa_account, :project_notes,
+      params.require(:commissioning_form).permit(:draft, :send_email, :commissioning_date, :employee_name, :job, :customer_name, :job_type, :system_size, :location, :physical_address, :mailing_address, :parcel_id, :customer_phone, :customer_email, :permit, :installation_completed, :net_meter_installed, :wapa_account, :project_notes,
        mods_attributes: [:mod_type, :qty, :commissioning_form_id],
        inverters_attributes: [:inverter_type, :qty_of_inverter, :total_mods_to_inv, :strings, :avg_voltage_dc, :ocpd, :load_center_size, :lc_main_wire_gauge, :kwh_total, :commissioning_form_id])
     end
