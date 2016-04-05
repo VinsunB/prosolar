@@ -12,10 +12,10 @@ end
 	
 group :production do
  
-gem 'pg', '~> 0.18.4'
-gem 'rails_12factor', '~> 0.0.3'
+gem 'pg'
+gem 'rails_12factor'
 end
-
+gem 'puma'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
