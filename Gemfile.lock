@@ -41,6 +41,8 @@ GEM
     execjs (2.6.0)
     figaro (1.1.1)
       thor (~> 0.14)
+    foreman (0.78.0)
+      thor (~> 0.19.1)
     hike (1.2.3)
     i18n (0.7.0)
     jbuilder (2.4.1)
@@ -122,6 +124,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   coffee-rails (~> 4.0.0)
   figaro
+  foreman (~> 0.78.0)
   jbuilder (~> 2.0)
   jquery-rails
   pg
